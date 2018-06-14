@@ -1,1 +1,1 @@
-# mn_docs
+Documentation repository
