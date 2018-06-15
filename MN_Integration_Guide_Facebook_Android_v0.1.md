@@ -31,7 +31,9 @@
 ## 5. 指南
 
 ### 5.1 系统分享设置与集成
-*利用文字，截图，代码详细说明如何 设置、集成和开发*
+* *点击进入https://developers.facebook.com/，注册账号并登陆后，点击添加应用，如下图：*
+[![Facebook Develop Web](/images/1404CEDD-58D8-4FE0-A081-D6EB0F71920C.png)](https://developers.facebook.com/)
+
 
 
 
