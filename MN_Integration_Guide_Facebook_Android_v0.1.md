@@ -34,7 +34,7 @@
 
 #### Facebook开发者平台
 * *点击进入[https://developers.facebook.com/](https://developers.facebook.com/)，注册账号并登陆后，点击添加应用，如下图：*
-[![Facebook Develop Web](/images/1404CEDD-58D8-4FE0-A081-D6EB0F71920C.png)](https://developers.facebook.com/)
+[![Facebook Developer Web](/images/1404CEDD-58D8-4FE0-A081-D6EB0F71920C.png)](https://developers.facebook.com/)
 
 * *填写好名称后进入应用配置界面，如下图：*
 ![App Key](/images/7468706D-F507-4696-9F13-AAB221E0D1A1.png)
