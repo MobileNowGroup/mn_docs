@@ -105,8 +105,8 @@ MobSDK {
     ShareSDK {
         devInfo {
             Twitter {
-                appKey "DGJLfg87Du8xXnGKztrHQlUGW"
-                appSecret "KjN9o8utQmKX0JyKzllIDdsyTFhzHEPjxFeCtQazyJob70hpVc"
+                appKey "JYqWP7ARsaEB7CWMW36BsSnEZ" //Twitter Consumer Key (API Key)
+                appSecret "FvTq2TtxlVi15XOSVQQ9uFx5jg6drSYl3UuNRJwRcf9I9CxiV2" //Twitter Consumer Secret (API Secret)
                 callbackUri "https://mob.com" //Twitter中注册的Callback URLs
             }
         }
