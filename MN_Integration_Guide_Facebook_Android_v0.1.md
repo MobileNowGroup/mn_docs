@@ -205,5 +205,7 @@ public void shareWithFacebook(View view) {
 ```
 
 注意事项:
+
     1、确保hashkey正确,否则可能出现点击facebook分享的时候能跳转过去,但是实际并没有分享成功(可以自己登陆facebook客户端看看).
+
     2、确保hashkey 以及登入里面的回调地址都有没有问题，如果都没有问题，但分享还是不成功，把手机重启或者facebook清除缓存再试试(我当时就是修改了hashkey后一直测试不成功，后面把facebook缓存清除了 重新登录下就好了)
