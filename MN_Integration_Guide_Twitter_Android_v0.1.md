@@ -4,7 +4,7 @@
 |----|-----------|--------------- |--------------- |
 |0.1|14 June, 2018|Gary Yao|大纲起草|
 |0.2|20 June, 2018|Jerry Xu|文档内容起草|
-|0.2|20 June, 2018|Bruce Lee|社会化分享集成与开发内容补充|
+|0.2|21 June, 2018|Bruce Lee|社会化分享集成与开发内容补充|
 
 
 ## 1. 文档目的
@@ -144,7 +144,7 @@ public void onLoginTwitter(View view) {
 
 ### 5.3 社会化分享集成与开发
 
-完成上述步骤后，可以使用一下代码来实现分享操作：
+完成上述步骤后，可以使用以下代码来实现内容分享操作：
 ```
 public void shareWithTwitter(View view) {
     final OnekeyShare oks = new OnekeyShare();
