@@ -174,12 +174,11 @@ public void shareWithTwitter(View view) {
     //启动分享
     oks.show(this);
 }
+```
+
 注意事项:
     1、Twitter只支持网页的分享,不支持通过app的跳转分享.
     2、Twitter分享时候弹出来的网页内容是分享方法里面设置的
     3、不要重复分享一样的消息，否则会分享失败.log里面会有提示重复.
 
 如果有问题搞定不了，可以找Mob客服, 一般问题都能给你解决。
-
-
-
