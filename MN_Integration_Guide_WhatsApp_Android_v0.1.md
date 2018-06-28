@@ -89,3 +89,17 @@ public void shareWithFacebook(View view) {
 ```
 在弹出来的对话框中选择WhatsApp即可跳转到WhatsApp进行分享操作。
 
+[![App设置](/images/whatsapp1.jpg)]
+
+点击WhatsApp
+
+[![App设置](/images/whatsapp2.jpg)]
+
+点击我的动态
+
+[![App设置](/images/whatsapp3.jpg)]
+
+输入分享内容，点击下面的三角形发送按钮，然后登录WhatsApp,即可看到分享的内容
+
+[![App设置](/images/whatsapp4.jpg)]
+
