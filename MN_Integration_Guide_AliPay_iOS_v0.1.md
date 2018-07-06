@@ -45,7 +45,7 @@
  `# import <AlipaySDK/AlipaySDK.h>`
 2. 从服务器获取加签后的订单信息，调用(AlipaySDK *)defaultService类下面的支付接口函数，唤起支付宝支付页面。
 ```
-(void)payOrder:(NSString *)orderStr
+-(void)payOrder:(NSString *)orderStr
 fromScheme:(NSString *)schemeStr
 callback:(CompletionBlock)completionBlock
 ```
