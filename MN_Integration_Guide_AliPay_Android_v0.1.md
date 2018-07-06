@@ -231,4 +231,16 @@ charset=utf-8&biz_content=%7B%22timeout_express%22%3A%2230m%22%2C%22product_code
 
 ![demo](/images/zhifubao3.png)
 
+#### 沙箱环境测试
+
+在调用支付之前调用
+```
+EnvUtils.setEnv(EnvUtils.EnvEnum.SANDBOX);
+```
+设置沙箱环境
+
+需要注意的是测试帐号也是需要用沙箱环境的
+
+![demo](/images/zhifubao4.png)
+
 到这里支付宝的集成工作就基本完成了。
