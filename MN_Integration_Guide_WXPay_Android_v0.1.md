@@ -26,8 +26,7 @@
 
 ### 5.1 帐号申请
 
-#### 支付宝企业帐号申请及app支付申请
-*具体请参考下面两个链接：
+#### 微信开放平台帐号申请
 1、https://jingyan.baidu.com/article/ff411625d3d12412e48237e4.html
 该链接大概介绍了微信开放平台申请
 2、http://kf.qq.com/faq/161220Brem2Q161220uUjERB.html
@@ -76,7 +75,7 @@ dependencies {
 
 #### 代码集成
 
-新建一个WxPay.java用于处理支付宝支付相关的功能
+新建一个WxPay.java用于处理微信支付相关的功能
 ```
 package com.vulog.carshare.whed.test.wxapi.pay;
 
@@ -387,16 +386,5 @@ charset=utf-8&biz_content=%7B%22timeout_express%22%3A%2230m%22%2C%22product_code
 
 ![demo](/images/zhifubao3.png)
 
-#### 沙箱环境测试
-
-在调用支付之前调用
-```
-EnvUtils.setEnv(EnvUtils.EnvEnum.SANDBOX);
-```
-设置沙箱环境
-
-需要注意的是测试帐号也是需要用沙箱环境的
-
-![demo](/images/zhifubao4.png)
 
 到这里支付宝的集成工作就基本完成了。
