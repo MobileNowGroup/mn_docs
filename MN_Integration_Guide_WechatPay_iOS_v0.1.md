@@ -23,18 +23,18 @@
 * Security.framework
 * CFNetwork.framework
 ![weixin-iOS2.png](/images/weixin-iOS2.png)
-### 5.3 配置Build Setting
+### 5.2 配置Build Setting
 1.在你的工程文件中选择Build Setting，在”Other Linker Flags”中加入”-Objc -all_load”（如下图）
 ![weixin-iOS4.png](/images/weixin-iOS4.png)
 
 2.在Search Paths中添加 libWeChatSDK.a ，WXApi.h，WXApiObject.h，文件所在位置（如下图）
 ![weixin-iOS5.png](/images/weixin-iOS5.png)
 
-### 5.2 *设置URL Scheme*
+### 5.3 *设置URL Scheme*
 商户在微信开放平台申请开发APP应用后，微信开放平台会生成APP的唯一标识APPID，在 [APP端开发步骤](https://link.jianshu.com/?t=https://pay.weixin.qq.com/wiki/doc/api/app/app.php?chapter=8_5) 里面说得很清楚了，需要填在URL Schemes这个地方。
 ![weixin-iOS3.png](/images/weixin-iOS3.png)
 
-### 5.3 配置微信白名单
+### 5.4 配置微信白名单
 在Xcode中，选择你的工程设置项，选中“TARGETS”一栏，在“info”标签栏的“LSApplicationQueriesSchemes“添加“weixin“、 “wechat”（如下图所示）。
 ![weixin-iOS6.png](/images/weixin-iOS6.png)
 
@@ -89,11 +89,11 @@
     }
 }
 ```
-6. 在调用微信支付类里面，首先增加头文件引用。
+5. 在调用微信支付类里面，首先增加头文件引用。
 ```
 #import "WXApi.h"
 ```
-5. 在微信支付前，需要先判断手机是否安装微信客户端和当前微信版本是否支持微信支付
+6. 在微信支付前，需要先判断手机是否安装微信客户端和当前微信版本是否支持微信支付
 ```
 /// 判断手机有没有微信
     if (WXApi.isWXAppInstalled == NO) {
@@ -102,7 +102,7 @@
         NSLog(@"当前微信版本不支持微信支付");
     }
 ```
-6. 在调起支付的方法中，需要上传的参数包括：appid、partid（商户号）、prepayid（预支付订单ID）、noncestr（参与签名的随机字符串）、timestamp（参与签名的时间戳）、sign（签名字符串）这六个。代码如下：
+7. 在调起支付的方法中，需要上传的参数包括：appid、partid（商户号）、prepayid（预支付订单ID）、noncestr（参与签名的随机字符串）、timestamp（参与签名的时间戳）、sign（签名字符串）这六个。代码如下：
 ```
 #pragma mark 微信支付方法
 - (void)wechatPay{
