@@ -18,7 +18,7 @@
 * *支付宝企业开发者账号*
 * *申请支付宝手机app支付*
 
-
+## 5. 支付宝集成
 ### 5.1 帐号申请
 
 #### 支付宝企业帐号申请及app支付申请
@@ -43,49 +43,34 @@
 ### 5.4 代码集成
 1. 在需要使用支付宝的开发包类库中，引入头文件
  `# import <AlipaySDK/AlipaySDK.h>`
-2. 从服务器获取加签后的订单信息，调用(AlipaySDK *)defaultService类下面的支付接口函数，唤起支付宝支付页面。
+2. 从服务器获取加签后的订单信息，即orderStr，调用(AlipaySDK *)defaultService类下面的支付接口函数，唤起支付宝支付页面。
 ```
 -(void)payOrder:(NSString *)orderStr
 fromScheme:(NSString *)schemeStr
 callback:(CompletionBlock)completionBlock
 ```
 appScheme为app在info.plist注册的scheme。`
-3. 当这笔交易被买家支付成功后支付宝收银台上显示该笔交易成功，并提示用户“返回”。此时在APAppDelegate.m的 - (BOOL)application:(UIApplication )application openURL:(NSURL )url sourceApplication:(NSString )sourceApplication annotation:(id)annotation 中调用获取返回数据的代码【iOS9.0以上（包括iOS9.0）需要在 - (BOOL)application:(UIApplication )app openURL:(NSURL )url options:(NSDictionary<NSString, id> *)options 中执行 】：
+
+3. 当这笔交易被买家支付成功后支付宝收银台上显示该笔交易成功，并提示用户“返回”。
+此时在APAppDelegate.m的 - (BOOL)application:(UIApplication )app openURL:(NSURL )url options:(NSDictionary<NSString, id> *)options  中调用获取返回数据的代码：
 ```
- if ([url.host isEqualToString:@"safepay"]) {
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+    if ([url.host isEqualToString:@"safepay"]) {
         // 支付跳转支付宝钱包进行支付，处理支付结果
         [[AlipaySDK defaultService]processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
-           
-            NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
             if (resultDic.count > 0) {
                 if ([resultDic[@"resultStatus"] integerValue] == 9000) {
                     //支付成功
                 } else {
-                //支付失败
+                    //支付失败
                 }
             } else {
                 //支付失败
             }
-            
         }];
         
-        // 授权跳转支付宝钱包进行支付，处理支付结果
-        [[AlipaySDK defaultService] processAuth_V2Result:url standbyCallback:^(NSDictionary *resultDic) {
-            NSLog(@"result = %@",resultDic);
-            // 解析 auth code
-            NSString *result = resultDic[@"result"];
-            NSString *authCode = nil;
-            if (result.length>0) {
-                NSArray *resultArr = [result componentsSeparatedByString:@"&"];
-                for (NSString *subResult in resultArr) {
-                    if (subResult.length > 10 && [subResult hasPrefix:@"auth_code="]) {
-                        authCode = [subResult substringFromIndex:10];
-                        break;
-                    }
-                }
-            }
-            NSLog(@"授权结果 authCode = %@", authCode?:@"");
-        }];
     }
+    return true;
+}
 ```
 到这里支付宝的集成工作就基本完成了。
